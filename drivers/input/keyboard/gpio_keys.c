@@ -469,28 +469,28 @@ static void gpio_keys_gpio_report_event(struct gpio_button_data *bdata)
 		if(button->code == 91){
 			if(state){
 				// Mic off
-				input_event(input, type, mic_keycode_off_value, 1);
+				input_event(input, type, KEY_SELECT, 1);
 				input_sync(input);
-				input_event(input, type, mic_keycode_off_value, 0);
+				input_event(input, type, KEY_SELECT, 0);
 			}else{
 				// Mic on
-				input_event(input, type, mic_keycode_on_value, 1);
+				input_event(input, type, KEY_SELECT, 1);
 				input_sync(input);
-				input_event(input, type, mic_keycode_on_value, 0);
+				input_event(input, type, KEY_SELECT, 0);
 			}
 
 		}
 		else if(button->code == 87){
 			if(state){
 				// Camera off
-				input_event(input, type, cam_keycode_off_value, 1);
+				input_event(input, type, KEY_POWER, 1);
 				input_sync(input);
-				input_event(input, type, cam_keycode_off_value, 0);
+				input_event(input, type, KEY_POWER, 0);
 			}else{
 				// Camera on
-				input_event(input, type, cam_keycode_on_value, 1);
+				input_event(input, type, KEY_POWER, 1);
 				input_sync(input);
-				input_event(input, type, cam_keycode_on_value, 0);
+				input_event(input, type, KEY_POWER, 0);
 			}
 
 		}
