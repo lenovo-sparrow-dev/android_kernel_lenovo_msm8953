@@ -248,6 +248,7 @@ struct msm8916_asoc_mach_data {
 #ifdef CONFIG_MACH_LENOVO_KUNTAO
 	struct regulator *vdd;
 #endif
+	void __iomem *vaddr_gpio_mux_sec_pcm_ctl;
 	struct on_demand_supply wsa_switch_supply;
 };
 
