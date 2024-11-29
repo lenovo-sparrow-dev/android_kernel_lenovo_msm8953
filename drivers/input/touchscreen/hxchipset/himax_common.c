@@ -1941,13 +1941,15 @@ int himax_chip_common_resume(struct himax_ts_data *ts)
 
 	I("%s: enter\n", __func__);
 
-	if (ts->pdata->powerOff3V3 && ts->pdata->power)
+	if (ts->pdata->powerOff3V3 && ts->pdata->power) {
 		ts->pdata->power(1);
 
 		if (ts->protocol_type == PROTOCOL_TYPE_A)
 			input_mt_sync(ts->input_dev);
 		input_report_key(ts->input_dev, BTN_TOUCH, 0);
 		input_sync(ts->input_dev);
+	
+	}
 
 	if (ts->ts_pinctrl) {
 		retval = pinctrl_select_state(ts->ts_pinctrl,
